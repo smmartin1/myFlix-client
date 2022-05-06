@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 export class MovieCard extends React.Component {
   render(){
@@ -10,14 +12,14 @@ export class MovieCard extends React.Component {
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    Title: PropTypes.string,
-    Description: PropTypes.string,
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
-      Name: PropTypes.string,
+      Name: PropTypes.string.isRequired,
       Description: PropTypes.string
     }),
     Director: PropTypes.shape({
-      Name: PropTypes.string,
+      Name: PropTypes.string.isRequired,
       Bio: PropTypes.string,
       Birth: PropTypes.string,
       Death: PropTypes.string
