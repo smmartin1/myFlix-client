@@ -1,0 +1,52 @@
+.login-card {
+  background-color: #B9A4DB;
+}
+
+#login-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+#register-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+.movie-card {
+  margin: 10px 0;
+}
+
+.movie-body {
+  background-color: #B9A4DB;
+}
+
+#movie-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+#movie-button {
+  background-color: #513E6B;
+  color: #FFFFFF;
+  margin: 10px 0;
+}
+
+.movie-poster {
+  text-align: center;
+}
+
+.movie-img {
+  height: 300px;
+  margin: 10px 0;
+}
+
+.label {
+  font-weight: bold;
+}
+.navigation-bar {
+  background-color: #69548C;
+}
+.app-container {
+  background-color: #DDD3ED;
+  font-family: "Mulish", sans-serif;
+}
+/*# sourceMappingURL=index.1d334ea1.css.map */
