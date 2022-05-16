@@ -58,18 +58,6 @@ export class DirectorView extends React.Component {
           ))}
         </Card>
 
-          /*
-          <Card.Img variant="top" src={movie.ImagePath}/>
-          <Card.Body className="movie-body">
-            <Card.Title className="movie-title">{movie.Title}</Card.Title>
-            <Card.Text>{movie.Description}</Card.Text>
-            <Link to={'/movies/${movie._id}'}>
-              <Button id="movie-btn" onClick={() => onMovieClick(movie)} variant="primary">Open</Button>
-            </Link>
-          </Card.Body>
-        </Card>
-        */
-
         <Button id="director-button" onClick={() => { onBackClick(null); }}>Back</Button>
        </div>
     );

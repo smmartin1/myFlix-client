@@ -28,7 +28,7 @@ export function ProfileView({ movies, onUpdatedUserInfo }) {
             </Card.Body>
           </Card>
         </Col>
-        
+
         <Col xs={12} sm={8}>
           <Card>
             <Card.Body>
