@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
 
@@ -12,25 +11,16 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 
+import './main-view.scss';
+
 export class MainView extends React.Component{
   constructor(){
       super();
       this.state = {
         movies: [],
         selectedMovie: null,
-        user: null,
-        register: null
+        user: null
       };
-    }
-
-    componentDidMount(){
-        let accessToken = localStorage.getItem('token');
-        if (accessToken !== null) {
-          this.setState({
-            user: localStorage.getItem('user')
-          });
-          this.getMovies(accessToken);
-        }
     }
 
     setSelectedMovie(movie) {
@@ -48,6 +38,16 @@ export class MainView extends React.Component{
       localStorage.setItem('token', authData.token);
       localStorage.setItem('user', authData.user.Username);
       this.getMovies(authData.token);
+    }
+
+    componentDidMount(){
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+          this.setState({
+            user: localStorage.getItem('user')
+          });
+          this.getMovies(accessToken);
+        }
     }
 
     onLoggedOut() {
@@ -91,7 +91,7 @@ export class MainView extends React.Component{
                   if (!user) return <Col>
                       <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                     </Col>
-                  {/* code added here */}
+
                   if (movies.length === 0) return <div className="main-view" />
 
                   return movies.map(m => (

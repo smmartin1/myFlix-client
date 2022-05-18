@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './login-view.scss';
 
@@ -41,7 +42,7 @@ export function LoginView(props) {
       props.onLoggedIn(data);
     })
     .catch(e => {
-      console.log('user does not exist')
+      console.log(origin); //'user does not exist'
     });
   };
 
@@ -62,7 +63,7 @@ export function LoginView(props) {
                       onChange={e => setUsername(e.target.value)}
                       placeholder="Enter your username."
                      />
-                     {console.log('Error')}
+                     {/* code added here to display validation error */}
                      {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
 
@@ -78,7 +79,10 @@ export function LoginView(props) {
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
                   <Button variant="primary" type="submit" id="login-btn" onClick={handleSubmit}>Submit</Button>
-                  <Button variant="primary" type="submit" id="register-btn" onClick={handleRegister}>New User?</Button>
+
+                  <Link to={"/register"}>
+                    <Button variant="primary" type="submit" id="register-btn">New User?</Button>
+                  </Link>
                 </Form>
               </Card.Body>
             </Card>
@@ -90,9 +94,7 @@ export function LoginView(props) {
 }
 
 LoginView.propTypes = {
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired
-  }).isRequired,
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './genre-view.scss';
@@ -22,18 +22,21 @@ export class GenreView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="genre-view">
-        <div className="movie-genre">
-          <span className="label">{movie.Genre.Name}</span>
-        </div>
-        <div className="genre-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Genre.Description}</span>
-        </div>
+      <Container>
+        <Row>
+          <Col xs={12} sm={8}>
+            <Card className="genre-view">
+              <Card.Title className="movie-genre">{movie.Genre.Name}</Card.Title>
+              <Card.Text className="genre-description">Description: {movie.Genre.Description}</Card.Text>
+            </Card>
+          </Col>
+        </Row>
 
-        <Card className="genre-card">
-          <Card.Title>Movies</Card.Title>
-          {moviesFilter.map((m) => (
+        <Row>
+          <Col xs={12} sm={8}>
+            {moviesFilter.map((m) => (
+              <Card className="genre-card">
+                <Card.Title>Movies</Card.Title>
                 <Card.Img className="movie-poster" variant="top" src={m.ImagePath} />
                 <Card.Body className="movie-body">
                   <Card.Title className="movie-title">{m.Title}</Card.Title>
@@ -41,16 +44,18 @@ export class GenreView extends React.Component {
                     <Button id="movie-btn" onClick={() => onMovieClick(movie)} variant="primary">Open</Button>
                   </Link>
                 </Card.Body>
-          ))}
-        </Card>
+              </Card>
+            ))}
+          </Col>
+        </Row>
 
         <Button id="genre-button" onClick={() => { onBackClick(null); }}>Back</Button>
-       </div>
+       </Container>
     );
   }
 }
 
-MovieView.propTypes = {
+GenreView.propTypes = {
   movie: PropTypes.shape({
     Genre: PropTypes.shape({
       Name: PropTypes.string.isRequired,

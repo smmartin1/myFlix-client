@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './director-view.scss';
@@ -22,44 +22,41 @@ export class DirectorView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="director-view">
-        <div className="director-img">
-          <img src="#" />
-        </div>
-        <div className="movie-director">
-          <span className="label">{movie.Director.Name}</span>
-        </div>
-        <div className="director-bio">
-          <span className="label">Bio: </span>
-          <span className="value">{movie.Director.Bio}</span>
-        </div>
-        <div className="director-birth">
-          <span className="label">Birthday: </span>
-          <span className="value">{movie.Director.Birth}</span>
-        </div>
 
-        if (movie.Director.Death === 'null') return {
-          <div className="director-death">
-            <span className="label">Death: </span>
-            <span className="value">{movie.Director.Death}</span>
-          </div>
-        }
+      <Container className="director-view">
+        <Row>
+          <Col xs={12} sm={8}>
+            <Card className="director-card">
+              <Card.Img src="#" />
+              <Card.Body>
+                <Card.Title className="movie-director">{movie.Director.Name}</Card.Title>
+                <Card.Text className="director-bio">Bio: {movie.Director.Bio}</Card.Text>
+                <Card.Text className="director-birth">Birthday: {movie.Director.Birth}</Card.Text>
+                //if (movie.Director.Death !== 'null') return <Card.Text className="director-death">Death: {movie.Director.Death}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
 
-        <Card className="director-card">
-          <Card.Title>Movies</Card.Title>
-          {moviesFilter.map((m) => (
+        <Row>
+          <Col xs={12} sm={8}>
+            <h2>Movies</h2>
+            {moviesFilter.map((m) => (
+            <Card className="director-card">
                 <Card.Img className="movie-poster" variant="top" src={m.ImagePath} />
                 <Card.Body className="movie-body">
-                  <Card.Title className="movie-title">{m.Title}</Card.Title>
+                  <Card.Text className="movie-title">{m.Title}</Card.Text>
                   <Link to={'/movies/${movie._id}'}>
                     <Button id="movie-btn" onClick={() => onMovieClick(movie)} variant="primary">Open</Button>
                   </Link>
                 </Card.Body>
-          ))}
-        </Card>
+            </Card>
+            ))}
+          </Col>
+        </Row>
 
         <Button id="director-button" onClick={() => { onBackClick(null); }}>Back</Button>
-       </div>
+       </Container>
     );
   }
 }

@@ -22,7 +22,7 @@ export function ProfileView({ movies, onUpdatedUserInfo }) {
         <Col xs={12} sm={4}>
           <Card>
             <Card.Body>
-              <Card.Title>Your Info<Card.Title>
+              <Card.Title>Your Info</Card.Title>
               <Card.Text>Username: {user.Username}</Card.Text>
               <Card.Text>Email: {user.Email}</Card.Text>
             </Card.Body>
@@ -42,7 +42,7 @@ export function ProfileView({ movies, onUpdatedUserInfo }) {
                 <Form.Group>
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" name="Password" defaultValue={user.Password} onChange={e => handleUpdate(e)} />
-                <Form.Group>
+                </Form.Group>
 
                 <Form.Group>
                   <Form.Label>Email</Form.Label>
@@ -67,7 +67,7 @@ export function ProfileView({ movies, onUpdatedUserInfo }) {
               <Link to={'/movies/${movies._id}'}>
                 <h4>{movies.Title}</h4>
               </Link>
-              <Button variant="secondary" onClick={() => removeFav{movies.id}}>Remove from list</Button>
+              <Button variant="secondary" onClick={() => removeFav(movies._id)}>Remove from list</Button>
             </Col>
           )
         })}
