@@ -33,17 +33,20 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://fathomless-peak-84165.herokuapp.com/login', {
-      Username: username,
-      Password: password
-    })
-    .then(response => {
-      const data = response.data;
-      props.onLoggedIn(data);
-    })
-    .catch(e => {
-      console.log(origin); //'user does not exist'
-    });
+    const isReq = validate();
+    if(isReq) {
+      axios.post('https://fathomless-peak-84165.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      })
+      .then(response => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      })
+      .catch(e => {
+        console.log('User does not exist');
+      });
+    }
   };
 
   return (
@@ -78,7 +81,7 @@ export function LoginView(props) {
                     {/* code added here to display validation error */}
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
-                  <Button variant="primary" type="submit" id="login-btn" onClick={handleSubmit}>Submit</Button>
+                  <Button variant="primary" type="submit" id="login-btn" onClick={handleSubmit}>Log In</Button>
 
                   <Link to={"/register"}>
                     <Button variant="primary" type="submit" id="register-btn">New User?</Button>
@@ -92,9 +95,3 @@ export function LoginView(props) {
     </Container>
   );
 }
-
-LoginView.propTypes = {
-  username: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
-};
