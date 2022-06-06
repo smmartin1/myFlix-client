@@ -1,14 +1,15 @@
-#movie-button {
+#movie-button, #add-button, #remove-button {
   background-color: #513E6B;
   color: #FFFFFF;
-  margin: 10px 0;
 }
 
-.movie-poster{text-align: center;}
-
-.movie-img {
-  height: 300px;
-  margin: 10px 0;
+.movie-poster{
+  text-align: center;
 }
 
-.label {font-weight: bold;}
+#movie-card{background-color: #B9A4DB;}
+
+#genre-link, #director-link{
+  color: #212529;
+  text-decoration: underline;
+}
