@@ -18,22 +18,51 @@ export function RegistrationView(props) {
     emailErr: ''
   });
 
+  const validate = () => {
+    let isReq = true;
+    if(!username){
+     setUsernameErr('Username Required');
+     isReq = false;
+    }else if(username.length < 2){
+     setUsernameErr('Username must be 2 characters long');
+     isReq = false;
+    }
+    if(!password){
+     setPasswordErr('Password Required');
+     isReq = false;
+    }else if(password.length < 6){
+     setPasswordErr('Password must be 6 characters long');
+     isReq = false;
+    }
+    if(!email) {
+      setEmailErr('Email is Required');
+      isReq = false;
+    }else if(email.indexOf('@') === -1) {
+      setEmailErr('Must have a valid email');
+      isReq = false;
+    }
+    return isReq;
+  }
+
   const handleRegister = (e) => {
     e.preventDefault();
-    axios.post('https://fathomless-peak-84165.herokuapp.com/users', {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthday: birthday
-    })
-    .then(response => {
-      const data = response.data;
-      console.log(data);
-      window.open('/', '_self');
-    })
-    .catch(e => {
-      console.log('error registering the user')
-    });
+    const isReq = validate();
+    if(isReq) {
+      axios.post('https://fathomless-peak-84165.herokuapp.com/users', {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
+      })
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        window.open('/', '_self');
+      })
+      .catch(e => {
+        console.log('error registering the user')
+      });
+    }
   };
 
   return (
@@ -72,15 +101,3 @@ export function RegistrationView(props) {
     </Container>
   );
 }
-
-/*
-RegistrationView.propTypes = {
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    birthday: PropTypes.string.isRequired
-  }).isRequired,
-  onClick: PropTypes.func.isRequired
-};
-*/
