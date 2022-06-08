@@ -57,6 +57,7 @@ export function RegistrationView(props) {
       .then(response => {
         const data = response.data;
         console.log(data);
+        alert('Welcome to myFlix!');
         window.open('/', '_self');
       })
       .catch(e => {
