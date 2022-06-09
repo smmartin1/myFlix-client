@@ -45305,20 +45305,27 @@ function FavoriteMovies({ user , movies , favoriteMovies  }) {
             lineNumber: 29
         },
         __self: this,
-        children: movieList.map((movie)=>{
+        children: movieList.length === 0 ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
+            __source: {
+                fileName: "src/components/profile-view/favorite-movies.jsx",
+                lineNumber: 31
+            },
+            __self: this,
+            children: "Add your favorite movies"
+        }) : movieList.map((movie)=>{
             return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 xs: 12,
                 md: 6,
                 lg: 4,
                 __source: {
                     fileName: "src/components/profile-view/favorite-movies.jsx",
-                    lineNumber: 32
+                    lineNumber: 34
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                     __source: {
                         fileName: "src/components/profile-view/favorite-movies.jsx",
-                        lineNumber: 33
+                        lineNumber: 35
                     },
                     __self: this,
                     children: [
@@ -45327,7 +45334,7 @@ function FavoriteMovies({ user , movies , favoriteMovies  }) {
                             src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/profile-view/favorite-movies.jsx",
-                                lineNumber: 34
+                                lineNumber: 36
                             },
                             __self: this
                         }),
@@ -45335,7 +45342,7 @@ function FavoriteMovies({ user , movies , favoriteMovies  }) {
                             id: "fav-card",
                             __source: {
                                 fileName: "src/components/profile-view/favorite-movies.jsx",
-                                lineNumber: 35
+                                lineNumber: 37
                             },
                             __self: this,
                             children: [
@@ -45343,7 +45350,7 @@ function FavoriteMovies({ user , movies , favoriteMovies  }) {
                                     id: "fav-title",
                                     __source: {
                                         fileName: "src/components/profile-view/favorite-movies.jsx",
-                                        lineNumber: 36
+                                        lineNumber: 38
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
@@ -45351,7 +45358,7 @@ function FavoriteMovies({ user , movies , favoriteMovies  }) {
                                         id: "fav-title",
                                         __source: {
                                             fileName: "src/components/profile-view/favorite-movies.jsx",
-                                            lineNumber: 37
+                                            lineNumber: 39
                                         },
                                         __self: this,
                                         children: movie.Title
@@ -45365,7 +45372,7 @@ function FavoriteMovies({ user , movies , favoriteMovies  }) {
                                     },
                                     __source: {
                                         fileName: "src/components/profile-view/favorite-movies.jsx",
-                                        lineNumber: 39
+                                        lineNumber: 41
                                     },
                                     __self: this,
                                     children: "Remove"
@@ -45425,36 +45432,36 @@ function UpdateUser({ user  }) {
             }
         }).then((response)=>{
             alert('Profile has been updated');
-            window.open('/users/:Username', '_self');
+            localStorage.setItem('user', response.data.Username);
+            window.open(`/users/${user}`, '_self');
         }).catch(function(error) {
             console.log(error);
         });
-        console.log(`https://fathomless-peak-84165.herokuapp.com/users/${user.Username}`);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsx(_react.Fragment, {
         __source: {
             fileName: "src/components/profile-view/update-user.jsx",
-            lineNumber: 36
+            lineNumber: 35
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
             __source: {
                 fileName: "src/components/profile-view/update-user.jsx",
-                lineNumber: 37
+                lineNumber: 36
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                 id: "update-card",
                 __source: {
                     fileName: "src/components/profile-view/update-user.jsx",
-                    lineNumber: 38
+                    lineNumber: 37
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                         __source: {
                             fileName: "src/components/profile-view/update-user.jsx",
-                            lineNumber: 39
+                            lineNumber: 38
                         },
                         __self: this,
                         children: "Update Info"
@@ -45463,21 +45470,21 @@ function UpdateUser({ user  }) {
                         className: "profile-form",
                         __source: {
                             fileName: "src/components/profile-view/update-user.jsx",
-                            lineNumber: 40
+                            lineNumber: 39
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                 __source: {
                                     fileName: "src/components/profile-view/update-user.jsx",
-                                    lineNumber: 41
+                                    lineNumber: 40
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-user.jsx",
-                                            lineNumber: 42
+                                            lineNumber: 41
                                         },
                                         __self: this,
                                         children: "Username:"
@@ -45485,13 +45492,13 @@ function UpdateUser({ user  }) {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                         type: "text",
                                         name: "Username",
-                                        value: username,
+                                        defaultValue: username,
                                         onChange: (e)=>setUsername(e.target.value)
                                         ,
                                         placeholder: "Username",
                                         __source: {
                                             fileName: "src/components/profile-view/update-user.jsx",
-                                            lineNumber: 43
+                                            lineNumber: 42
                                         },
                                         __self: this
                                     })
@@ -45500,14 +45507,14 @@ function UpdateUser({ user  }) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                 __source: {
                                     fileName: "src/components/profile-view/update-user.jsx",
-                                    lineNumber: 52
+                                    lineNumber: 51
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-user.jsx",
-                                            lineNumber: 53
+                                            lineNumber: 52
                                         },
                                         __self: this,
                                         children: "Password"
@@ -45515,13 +45522,13 @@ function UpdateUser({ user  }) {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                         type: "password",
                                         name: "Password",
-                                        value: password,
+                                        defaultValue: password,
                                         onChange: (e)=>setPassword(e.target.value)
                                         ,
                                         placeholder: "Password",
                                         __source: {
                                             fileName: "src/components/profile-view/update-user.jsx",
-                                            lineNumber: 54
+                                            lineNumber: 53
                                         },
                                         __self: this
                                     })
@@ -45530,14 +45537,14 @@ function UpdateUser({ user  }) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                 __source: {
                                     fileName: "src/components/profile-view/update-user.jsx",
-                                    lineNumber: 63
+                                    lineNumber: 62
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-user.jsx",
-                                            lineNumber: 64
+                                            lineNumber: 63
                                         },
                                         __self: this,
                                         children: "Email"
@@ -45545,13 +45552,13 @@ function UpdateUser({ user  }) {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                         type: "email",
                                         name: "Email",
-                                        value: email,
+                                        defaultValue: email,
                                         onChange: (e)=>setEmail(e.target.value)
                                         ,
                                         placeholder: "Email",
                                         __source: {
                                             fileName: "src/components/profile-view/update-user.jsx",
-                                            lineNumber: 65
+                                            lineNumber: 64
                                         },
                                         __self: this
                                     })
@@ -45563,7 +45570,7 @@ function UpdateUser({ user  }) {
                                 onClick: handleUpdate,
                                 __source: {
                                     fileName: "src/components/profile-view/update-user.jsx",
-                                    lineNumber: 74
+                                    lineNumber: 73
                                 },
                                 __self: this,
                                 children: "Update"
@@ -45585,7 +45592,7 @@ $RefreshReg$(_c, "UpdateUser");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./profile-view.scss":"gb0ga","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"gb0ga":[function() {},{}],"gb0ga":[function() {},{}],"j0Dt2":[function(require,module,exports) {
+},{"react":"6TuXu","axios":"iYoWk","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./profile-view.scss":"gb0ga","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react/jsx-runtime":"8xIwr"}],"gb0ga":[function() {},{}],"gb0ga":[function() {},{}],"j0Dt2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$469c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

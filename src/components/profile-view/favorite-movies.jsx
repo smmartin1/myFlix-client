@@ -27,21 +27,24 @@ export function FavoriteMovies({ user, movies, favoriteMovies }) {
 
   return (
     <Fragment>
-      {movieList.map((movie) => {
-        return (
-          <Col xs={12} md={6} lg={4}>
-            <Card>
-              <Card.Img variant="top" src={movie.ImagePath} />
-              <Card.Body id="fav-card">
-                <Card.Title id="fav-title">
-                  <Link to={`/movies/${movie._id}`} id="fav-title">{movie.Title}</Link>
-                </Card.Title>
-                <Button variant="secondary" id="remove-button" onClick={() => {removeFav(movie._id)}}>Remove</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        )
-      })}
+      { movieList.length === 0
+        ? (<p>Add your favorite movies</p>)
+        : movieList.map((movie) => {
+            return (
+              <Col xs={12} md={6} lg={4}>
+                <Card>
+                  <Card.Img variant="top" src={movie.ImagePath} />
+                  <Card.Body id="fav-card">
+                    <Card.Title id="fav-title">
+                      <Link to={`/movies/${movie._id}`} id="fav-title">{movie.Title}</Link>
+                    </Card.Title>
+                    <Button variant="secondary" id="remove-button" onClick={() => {removeFav(movie._id)}}>Remove</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            )
+          })
+      }
     </Fragment>
   )
 }

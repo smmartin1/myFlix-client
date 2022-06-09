@@ -23,13 +23,12 @@ export function UpdateUser({ user }) {
     })
     .then((response) => {
       alert('Profile has been updated');
-      window.open('/users/:Username', '_self');
+      localStorage.setItem('user', response.data.Username);
+      window.open(`/users/${user}`, '_self');
     })
     .catch(function (error) {
         console.log(error);
     });
-
-    console.log(`https://fathomless-peak-84165.herokuapp.com/users/${user.Username}`)
   }
 
   return (
@@ -43,7 +42,7 @@ export function UpdateUser({ user }) {
               <Form.Control
                 type="text"
                 name="Username"
-                value={username}
+                defaultValue={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Username"
               />
@@ -54,7 +53,7 @@ export function UpdateUser({ user }) {
               <Form.Control
                 type="password"
                 name="Password"
-                value={password}
+                defaultValue={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
               />
@@ -65,7 +64,7 @@ export function UpdateUser({ user }) {
               <Form.Control
                 type="email"
                 name="Email"
-                value={email}
+                defaultValue={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
               />
