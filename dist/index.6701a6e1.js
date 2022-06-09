@@ -45294,7 +45294,7 @@ function FavoriteMovies({ user , movies , favoriteMovies  }) {
             }
         }).then((response)=>{
             alert('Movie has been removed from favorites');
-            console.log(response.data);
+            window.open(`/users/${user1}`, '_self');
         }).catch(function(error) {
             console.log(error);
         });
