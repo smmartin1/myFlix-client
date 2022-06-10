@@ -1,0 +1,122 @@
+.login-card {
+  background-color: #B9A4DB;
+}
+
+#login-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+#register-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+.registration-card {
+  background-color: #B9A4DB;
+}
+
+#submit-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+#back-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+.movie-card {
+  margin: 10px 0;
+}
+
+.movie-body {
+  background-color: #B9A4DB;
+}
+
+#movie-btn {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+#movie-button, #add-button, #remove-button {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+.movie-poster {
+  text-align: center;
+}
+
+#movie-card {
+  background-color: #B9A4DB;
+}
+
+#genre-link, #director-link {
+  color: #212529;
+  text-decoration: underline;
+}
+.movie-director, h2, .movie-title {
+  text-align: center;
+}
+
+#director-button, #movie-button {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+.movie-poster {
+  text-align: center;
+}
+
+#director-card {
+  background-color: #B9A4DB;
+}
+.movie-genre, .genre-description, h2, .movie-title {
+  text-align: center;
+}
+
+#genre-button, #movie-button {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+.movie-poster {
+  text-align: center;
+}
+
+#genre-view {
+  background-color: #B9A4DB;
+}
+#delete-button, #update-button, #remove-button {
+  background-color: #513E6B;
+  color: #FFFFFF;
+}
+
+#update-button {
+  margin-top: 10px;
+}
+
+#info-card, #update-card, #fav-card {
+  background-color: #B9A4DB;
+}
+
+h2 {
+  padding: 10px;
+  text-decoration: underline;
+}
+
+#fav-title {
+  text-align: center;
+  color: #000;
+}
+.navigation-bar {
+  background-color: #69548C;
+}
+
+#user-name, #logout, #sign-in, #sign-up {
+  color: #000;
+}
+
+.app-container {
+  background-color: #DDD3ED;
+  font-family: "Mulish", sans-serif;
+}
+/*# sourceMappingURL=index.1d334ea1.css.map */
