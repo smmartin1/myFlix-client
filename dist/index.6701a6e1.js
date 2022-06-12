@@ -27914,7 +27914,9 @@ class MainView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                 path: `/users/${user}`,
                                 render: ({ history  })=>{
-                                    //if (!user) return <Redirect to="/" />
+                                    if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Redirect, {
+                                        to: "/"
+                                    }));
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
                                             user: user,
