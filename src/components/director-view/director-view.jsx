@@ -37,7 +37,7 @@ export class DirectorView extends React.Component {
 
         <Row>
           <Col>
-            <h2>Movies</h2>
+            <h3>Movies</h3>
           </Col>
         </Row>
 

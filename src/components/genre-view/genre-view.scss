@@ -1,5 +1,9 @@
-.movie-genre, .genre-description, h2, .movie-title{
+.movie-genre, .genre-description, h3, .movie-title{
   text-align: center;
+}
+
+.movie-genre, h3 {
+  text-decoration: underline;
 }
 
 #genre-button, #movie-button {
