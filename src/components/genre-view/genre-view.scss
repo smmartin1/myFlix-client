@@ -11,8 +11,17 @@
   color: #FFFFFF;
 }
 
+#genre-button{
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+
 .movie-poster{
   text-align: center;
 }
 
-#genre-view{background-color: #B9A4DB;}
+#genre-view{
+  background-color: #B9A4DB;
+  padding: 25px;
+  margin: 10px 0;
+}

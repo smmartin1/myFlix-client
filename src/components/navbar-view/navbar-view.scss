@@ -1,5 +1,12 @@
 .navigation-bar{background-color: #69548C;}
 
+#navbar-logo{font-size: 30px;}
+
 #user-name, #logout, #sign-in, #sign-up{
   color: #000;
+  font-size: 18px;
+}
+
+#user-name:hover, #sign-in:hover{
+  text-decoration: underline;
 }
