@@ -17,11 +17,13 @@
 #login-btn {
   background-color: #513E6B;
   color: #FFFFFF;
+  margin-top: 15px;
 }
 
 #register-btn {
   background-color: #513E6B;
   color: #FFFFFF;
+  margin: 15px 0 0 25px;
 }
 .registration-card {
   background-color: #B9A4DB;
@@ -30,11 +32,13 @@
 #submit-btn {
   background-color: #513E6B;
   color: #FFFFFF;
+  margin-top: 15px;
 }
 
 #back-btn {
   background-color: #513E6B;
   color: #FFFFFF;
+  margin: 15px 0 0 25px;
 }
 #movie-button, #add-button, #remove-button {
   background-color: #513E6B;
@@ -68,6 +72,11 @@
   color: #FFFFFF;
 }
 
+#director-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+
 .movie-poster {
   text-align: center;
 }
@@ -88,12 +97,19 @@
   color: #FFFFFF;
 }
 
+#genre-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+
 .movie-poster {
   text-align: center;
 }
 
 #genre-view {
   background-color: #B9A4DB;
+  padding: 25px;
+  margin: 10px 0;
 }
 #delete-button, #update-button, #remove-button {
   background-color: #513E6B;
@@ -118,12 +134,25 @@ h2 {
   text-align: center;
   color: #000;
 }
+
+#update-title, #info-title {
+  text-decoration: underline;
+}
 .navigation-bar {
   background-color: #69548C;
 }
 
+#navbar-logo {
+  font-size: 30px;
+}
+
 #user-name, #logout, #sign-in, #sign-up {
   color: #000;
+  font-size: 18px;
+}
+
+#user-name:hover, #sign-in:hover {
+  text-decoration: underline;
 }
 
 .app-container {
