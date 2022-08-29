@@ -27,14 +27,14 @@ export class GenreView extends React.Component {
           <Col>
             <Card id="genre-view">
               <Card.Title className="movie-genre">{genre.Name}</Card.Title>
-              <Card.Text className="genre-description">Description: {genre.Description}</Card.Text>
+              <Card.Text className="genre-description">{genre.Description}</Card.Text>
             </Card>
           </Col>
         </Row>
 
         <Row>
           <Col>
-            <h2>Movies</h2>
+            <h3>Movies</h3>
           </Col>
         </Row>
 

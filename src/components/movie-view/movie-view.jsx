@@ -80,8 +80,8 @@ export class MovieView extends React.Component {
             <Card id="movie-card">
               <Card.Img className="movie-poster" src={movie.ImagePath} />
               <Card.Body>
-                <Card.Title>{movie.Title}</Card.Title>
-                <Card.Text>Description: {movie.Description}</Card.Text>
+                <Card.Title className="movie-title">{movie.Title}</Card.Title>
+                <Card.Text>{movie.Description}</Card.Text>
                 <Card.Text>
                   Genre: <Link id="genre-link" to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
                 </Card.Text>

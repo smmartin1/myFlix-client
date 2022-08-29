@@ -91,10 +91,11 @@ export function RegistrationView(props) {
                   <Form.Control type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
                 </Form.Group>
                 <Button type="submit" id="submit-btn" onClick={handleRegister}>Submit</Button>
+
+                <Link to={"/"}>
+                  <Button type="submit" id="back-btn">Back</Button>
+                </Link>
               </Form>
-              <Link to={"/"}>
-                <Button type="submit" id="back-btn">Back</Button>
-              </Link>
             </Card.Body>
           </Card>
         </Col>
