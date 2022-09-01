@@ -35,7 +35,7 @@ export function UpdateUser({ user }) {
     <Fragment>
       <Card>
         <Card.Body id="update-card">
-          <Card.Title>Update Info</Card.Title>
+          <Card.Title id="update-title">Update Info</Card.Title>
           <Form className='profile-form'>
             <Form.Group>
               <Form.Label>Username:</Form.Label>
@@ -49,7 +49,7 @@ export function UpdateUser({ user }) {
             </Form.Group>
 
             <Form.Group>
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password:</Form.Label>
               <Form.Control
                 type="password"
                 name="Password"
@@ -60,7 +60,7 @@ export function UpdateUser({ user }) {
             </Form.Group>
 
             <Form.Group>
-              <Form.Label>Email</Form.Label>
+              <Form.Label>Email:</Form.Label>
               <Form.Control
                 type="email"
                 name="Email"

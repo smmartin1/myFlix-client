@@ -56,7 +56,7 @@ export function ProfileView(props) {
         <Col xs={12} sm={4}>
           <Card>
             <Card.Body id="info-card">
-              <Card.Title>Your Info</Card.Title>
+              <Card.Title id="info-title">Your Info</Card.Title>
               <Card.Text>Username: {user.Username}</Card.Text>
               <Card.Text>Email: {user.Email}</Card.Text>
               <Button type="secondary" id="delete-button" onClick={() => removeUser(user.Username)}>Delete Your Account</Button>
