@@ -1,5 +1,6 @@
 .movie-card {
   margin: 10px 0;
+  box-shadow: 5px 10px 10px #69548C;
 }
 
 .movie-body {
@@ -45,17 +46,26 @@
   color: #FFFFFF;
 }
 
-.movie-poster {
+#movie-poster {
   text-align: center;
+  height: 500px !important;
 }
 
-.movie-title {
+#movie-title {
   text-align: center;
   text-decoration: underline;
 }
 
 #movie-card {
   background-color: #B9A4DB;
+  margin-top: 10px;
+  box-shadow: 15px 10px 10px #69548C;
+  width: 347px !important;
+}
+
+#movie-view {
+  display: flex !important;
+  justify-content: center !important;
 }
 
 #genre-link, #director-link {
@@ -151,11 +161,11 @@ h2 {
   font-size: 18px;
 }
 
-#user-name:hover, #sign-in:hover {
+#user-name:hover, #sign-in:hover, #sign-up:hover, #logout:hover {
   text-decoration: underline;
 }
 
-.app-container {
+html, .app-container {
   background-color: #DDD3ED;
   font-family: "Mulish", sans-serif;
 }
