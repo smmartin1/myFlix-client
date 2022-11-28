@@ -74,34 +74,34 @@ export class MovieView extends React.Component {
     let isFav = favMovie.includes(this.props.movie._id);
 
     return (
-      <Container className="movie-view">
+      <Container id="movie-view">
         <Row>
           <Col>
             <Card id="movie-card">
-              <Card.Img className="movie-poster" src={movie.ImagePath} />
-              <Card.Body>
-                <Card.Title className="movie-title">{movie.Title}</Card.Title>
-                <Card.Text>{movie.Description}</Card.Text>
-                <Card.Text>
-                  Genre: <Link id="genre-link" to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
-                </Card.Text>
-                <Card.Text>
-                  Director: <Link id="director-link" to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link>
-                </Card.Text>
+              <Card.Img id="movie-poster" src={movie.ImagePath} />
+                <Card.Body>
+                  <Card.Title id="movie-title">{movie.Title}</Card.Title>
+                  <Card.Text>{movie.Description}</Card.Text>
+                  <Card.Text>
+                    Genre: <Link id="genre-link" to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
+                  </Card.Text>
+                  <Card.Text>
+                    Director: <Link id="director-link" to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link>
+                  </Card.Text>
 
-                {!isFav && (
-                  <Button id="add-button" onClick={this.addFav}>Add to Favorites</Button>
-                )}
-                {isFav && (
-                  <Button id="remove-button" onClick={this.removeFav}>Remove from Favorites</Button>
-                )}
-              </Card.Body>
+                  {!isFav && (
+                    <Button id="add-button" onClick={this.addFav}>Add to Favorites</Button>
+                  )}
+                  {isFav && (
+                    <Button id="remove-button" onClick={this.removeFav}>Remove from Favorites</Button>
+                  )}
+                </Card.Body>
 
-              <Button id="movie-button" onClick={() => { onBackClick(null); }}>Back</Button>
-            </Card>
+                <Button id="movie-button" onClick={() => { onBackClick(null); }}>Back</Button>
+             </Card>
           </Col>
         </Row>
-       </Container>
+      </Container>
     );
   }
 }

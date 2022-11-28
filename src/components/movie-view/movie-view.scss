@@ -3,16 +3,27 @@
   color: #FFFFFF;
 }
 
-.movie-poster{
+#movie-poster{
   text-align: center;
+  height: 500px !important;
 }
 
-.movie-title{
+#movie-title{
   text-align: center;
   text-decoration: underline;
 }
 
-#movie-card{background-color: #B9A4DB;}
+#movie-card{
+  background-color: #B9A4DB;
+  margin-top: 10px;
+  box-shadow: 15px 10px 10px #69548C;
+  width: 347px !important;
+}
+
+#movie-view{
+  display: flex !important;
+  justify-content: center !important; 
+}
 
 #genre-link, #director-link{
   color: #212529;
