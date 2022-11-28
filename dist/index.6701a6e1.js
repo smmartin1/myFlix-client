@@ -47965,7 +47965,7 @@ function UpdateUser({ user  }) {
         }).then((response)=>{
             alert('Profile has been updated');
             localStorage.setItem('user', response.data.Username);
-            window.open(`/users/${user}`, '_self');
+            window.open(`/users/${user.Username}`, '_self');
         }).catch(function(error) {
             console.log(error);
         });
