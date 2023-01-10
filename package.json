@@ -21,6 +21,7 @@
   "homepage": "https://github.com/smmartin1/myFlix-client#readme",
   "dependencies": {
     "axios": "^0.27.2",
+    "json5": "^2.2.3",
     "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
